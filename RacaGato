@@ -1,0 +1,72 @@
+package aulajavaweb.model.enums;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public enum RacaGato {
+
+	
+	ABYSSINIAN((byte) 1, ""), AMERICAN_BOBTAIL_LONGHAIR((byte) 2, ""), AMERICAN_BOBTAIL_SHORTHAIR(
+			(byte) 3, ""), AMERICAN_SHORTHAIR((byte) 4, ""), AMERICAN_WIREHAIR(
+			(byte) 5, ""), ARABIAN_MAU((byte) 6, ""), ASIAN_SEMI_LONG_HAIR(
+			(byte) 7, ""), AUSTRALIAN_MIST((byte) 8, ""), BENGAL((byte) 9, ""), BOBTAIL_JAPONÊS(
+			(byte) 10, ""), BOMBAIM((byte) 11, ""), BRAZILIAN_SHORTHAIR(
+			(byte) 12, ""), BRITISH_LONGHAIR((byte) 13, ""), BURMÊS((byte) 14,
+			""), CALIFORNIA_SPANGLED_CAT((byte) 15, ""), CHAUSIE((byte) 16, ""), CORNISH_REX(
+			(byte) 17, ""), CURL_AMERICANO_PELO_CURTO((byte) 18, ""), CURL_AMERICANO_PELO_LONGO(
+			(byte) 19, ""), DEVON_REX((byte) 20, ""), DOMESTIC_LONG_HAIRED(
+			(byte) 21, ""), DOMESTIC_SHORT_HAIRED((byte) 22, ""), DON_SPHYNX(
+			(byte) 23, ""), EGYPTIAN_MAU((byte) 24, ""), EUROPEAN_EXOTIC_SHORTHAIR(
+			(byte) 25, ""), GERMAN_REX((byte) 26, ""), HAVANA((byte) 27, ""), HIMALAIO(
+			(byte) 28, ""), KHAO_MANEE((byte) 29, ""), KORAT((byte) 30, ""), KURILIAN_BOBTAIL_LONGHAIR(
+			(byte) 31, ""), KURILIAN_BOBTAIL_SHORTHAIR((byte) 32, ""), LAPERM_LONGHAIR(
+			(byte) 33, ""), LAPERM_SHORTHAIR((byte) 34, ""), MAINE_COON(
+			(byte) 35, ""), MANX((byte) 36, ""), MEKONG_BOBTAIL((byte) 37, ""), MUNCHKIN_LONGHAIR(
+			(byte) 38, ""), MUNCHKIN_SHORTHAIR((byte) 39, ""), NEBELUNG(
+			(byte) 40, ""), NORWEGIAN_FOREST_CAT((byte) 41, ""), OCICAT(
+			(byte) 42, ""), OJOS_AZULES_SHORTHAIR((byte) 43, ""), ORIENTAL_LONGHAIR(
+			(byte) 44, ""), ORIENTAL_SHORTHAIR((byte) 45, ""), PERSA((byte) 46,
+			""), PETERBALD((byte) 47, ""), PIXIEBOB_LONGHAIR((byte) 48, ""), PIXIEBOB_SHORTHAIR(
+			(byte) 49, ""), RAGAMUFFIN((byte) 50, ""), RAGDOLL((byte) 51, ""), RUSSO_AZUL(
+			(byte) 52, ""), SAGRADO_DA_BIRMÂNIA((byte) 53, ""), SAVANNAH_CAT(
+			(byte) 54, ""), SCOTTIS_FOLD((byte) 55, ""), SELKIRK_REX_LONGHAIR(
+			(byte) 56, ""), SELKIRK_REX_SHORTHAIR((byte) 57, ""), SERENGETI(
+			(byte) 58, ""), SIAMÊS((byte) 59, ""), SIBERIAN((byte) 60, ""), SINGAPURA(
+			(byte) 61, ""), SNOWSHOE((byte) 62, ""), SOKOKE((byte) 63, ""), SOMALI(
+			(byte) 64, ""), SPHYNX((byte) 65, ""), THAI((byte) 66, ""), TONKINESE_SHORTHAIR(
+			(byte) 67, ""), TOYGER((byte) 68, ""), TURKISH_ANGORÁ((byte) 69, ""), TURKISH_VAN(
+			(byte) 70, ""), YORK_CHOCOLATE((byte) 71, "");
+
+	private byte code;
+	private String description;
+
+	private RacaGato(byte code, String description) {
+		this.code = code;
+		this.description = description;
+	}
+
+	public byte getCode() {
+		return code;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public RacaGato getByCode(byte code) {
+		for (RacaGato r : values()) {
+			if (r.code == code)
+				return r;
+		}
+		return null;
+	}
+
+	public RacaGato getByDescription(String description) {
+		for (RacaGato r : values()) {
+			if (r.description.equalsIgnoreCase(description))
+				return r;
+		}
+		return null;
+	}
+
+}
