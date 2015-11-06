@@ -1,0 +1,84 @@
+package aulajavaweb.model.enums;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public enum TipoVacina {
+	
+	
+	BRONCHIGUARD((byte) 1, ""),
+	BRONCHIMUNE((byte) 2, ""), 
+	BRONCHI_SHIELD_III((byte) 3, ""), 
+	CANIGEN_L((byte) 4, ""), 
+	CANIGEN_CH_A2_P_L((byte) 5, ""), 
+	CANIGEN_CH_A2_PPI_LR((byte) 6, ""), 
+	CANIGEN_R((byte) 7, ""), 
+	CANIGEN_V8((byte) 8, ""), 
+	DEFENSOR((byte) 9, ""), 
+	DURAMUNE_MAX_5_CVK_4L((byte) 10, ""), 
+	FELIGEN_CRP_R((byte) 11, ""), 
+	FELIGEN_CR_P((byte) 12, ""), 
+	FELOCELL_CVR_TRÍPLICE_FELINA((byte) 13, ""), 
+	FELOCELL_CVR_C_QUÁDRUPLA_FELINA((byte) 14, ""), 
+	FEL_O_VAX_LVK_IV_CALICIVAX_QUÍNTUPLA_FELINA((byte) 15, ""), 
+	GIARDIAVAX((byte) 16, ""), 
+	GUARD_VAC_5_CVK((byte) 17, ""), 
+	GUARD_VAC_LCI_GP((byte) 18, ""),  
+	HERTALIQ((byte) 19, ""), 
+	IMUNO_VET((byte) 20, ""),  
+	IMUNO_VET_R((byte) 21, ""),  
+	INFERVAC((byte) 22, ""), 
+	INOMUNE((byte) 23, ""), 
+	LEISH_TEC((byte) 24, ""), 
+	LEISHMUNE((byte) 25, ""), 
+	RABMUNE((byte) 26, ""), 
+	RAI_VAC((byte) 27, ""), 
+	RONVAC((byte) 28, ""), 
+	VANGUARD_HTLP_5_CV_L_V8((byte) 29, ""), 
+	VANGUARD_PLUS_V10((byte) 30, ""), 
+	VENCOMAX_11((byte) 31, ""), 
+	VENCOMAX_12((byte) 32, ""), 
+	VENCOMAX_8((byte) 33, ""), 
+	VENCORONA((byte) 34, ""), 
+	VENCOTHREE_PUPPY((byte) 35, "");
+
+	
+	
+
+	
+	
+
+
+	private byte code;
+	private String description;
+
+	private TipoVacina(byte code, String description) {
+		this.code = code;
+		this.description = description;
+	}
+
+	public byte getCode() {
+		return code;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public TipoVacina getByCode(byte code) {
+		for (TipoVacina t : values()) {
+			if (t.code == code)
+				return t;
+		}
+		return null;
+	}
+
+	public TipoVacina getByDescription(String description) {
+		for (TipoVacina t : values()) {
+			if (t.description.equalsIgnoreCase(description))
+				return t;
+		}
+		return null;
+	}
+
+}
